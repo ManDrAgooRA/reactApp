@@ -1,0 +1,44 @@
+@import '@/styles/variables.scss';
+
+.price{
+  &-range{
+      padding: 0 20px;
+  }
+  &-filter{
+    width: 100%;
+    & input{
+        width: 100%;
+        max-width: 100px;
+    }
+    & form{
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+  }
+}
+
+.btn{
+  &-price{
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+      margin: $padding-content;
+      transition: all .2s;
+      &:hover{
+          color: #ff7878;
+      }
+  }
+}
+
+.icon{
+  &-price{
+      transition: all .4s;
+      &__active{
+          transition: all .4s;
+          transform: rotate(-90deg);
+      }
+  }
+}

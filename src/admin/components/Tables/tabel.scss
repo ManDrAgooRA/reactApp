@@ -1,0 +1,25 @@
+.table{
+  &-wrapper{
+    margin: 15px 10px;
+    & table{
+      overflow-x: auto;
+      & button{
+        background-color: #bebebe;
+      }
+      & thead{
+        background-color: #fff;
+        & th{
+          & div {
+            background-color: #bebebe;
+          }
+        }
+      }
+      & td, th{
+        border: 1px solid;
+      }
+      @media screen and(max-width: 768px) {
+        width: auto;
+      }
+    }
+  }
+}

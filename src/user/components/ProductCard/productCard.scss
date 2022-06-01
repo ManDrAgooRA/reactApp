@@ -1,0 +1,13 @@
+.product{
+  &-card{
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &-favorite{
+    &-icon__active path{
+      fill: inherit!important;
+      stroke: inherit!important;
+    }
+  }
+}

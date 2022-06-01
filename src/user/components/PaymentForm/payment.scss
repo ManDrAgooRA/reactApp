@@ -1,0 +1,13 @@
+.card{
+  width: 400px;
+  padding: 10px 0;
+  &-wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+}
+
+.payment-form{
+  padding: 10px;
+}
