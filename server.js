@@ -14,7 +14,7 @@ app.use(middlewares);
 app.use('/db', middlewares, router);
 app.use(express.static(path.join(__dirname, 'build')));
 
-console.log(`process.env.API_KEY: ${process.env.API_KEY}`);
+console.log(`process.env.API_KEY: ${process}`);
 
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));

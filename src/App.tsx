@@ -12,6 +12,7 @@ import '@/styles/style.scss';
 export const App = () => {
   console.log(`process.env.API_KEY: ${process.env.API_KEY}`);
   console.log(`process.env: ${process.env}`);
+  console.log(`process.env: ${process}`);
   return (
     <Provider store={store}>
       <Grommet theme={THEME}>
