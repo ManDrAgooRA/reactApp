@@ -12,9 +12,11 @@ import '@/styles/style.scss';
 export const App = () => {
   console.log(`process.env.API_KEY: ${process.env.API_KEY}`);
   console.log(`process.env: ${process.env}`);
+
   return (
     <Provider store={store}>
       <Grommet theme={THEME}>
+        <span>API_KEY:{process.env.API_KEY}</span>
         <BrowserRouter>
           <PersistGate loading={null} persistor={persistor}>
             <Layout>
