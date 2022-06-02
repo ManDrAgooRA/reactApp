@@ -1,3 +1,4 @@
+const path = require('path');
 const { merge } = require('webpack-merge');
 const CopyPlugin = require('copy-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
@@ -16,7 +17,7 @@ module.exports = merge(common, {
     }),
 
     new Dotenv({
-      path: './.env',
+      path: path.resolve(__dirname, './.env'),
     }),
   ],
 });
