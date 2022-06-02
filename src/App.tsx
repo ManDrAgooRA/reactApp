@@ -10,7 +10,8 @@ import { Layout } from '@/sharedComponents/layout/Layout/Layout';
 import '@/styles/style.scss';
 
 export const App = () => {
-  console.log('object');
+  console.log(`process.env.API_KEY: ${process.env.API_KEY}`);
+  console.log(`process.env: ${process.env}`);
   return (
     <Provider store={store}>
       <Grommet theme={THEME}>
