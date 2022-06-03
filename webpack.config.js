@@ -34,9 +34,9 @@ module.exports = {
       template: './src/index.html',
     }),
     new CleanWebpackPlugin(),
-    new Dotenv({
-      path: './.env',
-    }),
+    // new Dotenv({
+    //   // path: './.env',
+    // }),
 
     new DefinePlugin({
       API_KEY: JSON.stringify(process.env.API_KEY),
