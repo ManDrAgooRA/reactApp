@@ -36,6 +36,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new Dotenv({
       path: './.env',
+      systemvars: true,
     }),
 
     new DefinePlugin({
