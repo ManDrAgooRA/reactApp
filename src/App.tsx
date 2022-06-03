@@ -11,8 +11,7 @@ import '@/styles/style.scss';
 
 export const App = () => {
   console.log(`process.env.API_KEY: ${process.env.API_KEY}`);
-  console.log(`process.env.DATABASE_URL: ${process.env.DATABASE_URL}`);
-  console.log(`process.env: ${process.env}`);
+  // console.log(``);
 
   return (
     <Provider store={store}>
