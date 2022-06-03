@@ -7,11 +7,11 @@ const Dotenv = require('dotenv-webpack');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
 
-const env = dotenv.config().parsed;
-const envKeys = Object.keys(env).reduce((prev, next) => {
-  prev[`process.env.${next}`] = JSON.stringify(env[next]);
-  return prev;
-}, {});
+// const env = dotenv.config().parsed;
+// const envKeys = Object.keys(env).reduce((prev, next) => {
+//   prev[`process.env.${next}`] = JSON.stringify(env[next]);
+//   return prev;
+// }, {});
 
 module.exports = {
   mode: 'development',
@@ -42,7 +42,9 @@ module.exports = {
       template: './src/index.html',
     }),
     new CleanWebpackPlugin(),
-    new webpack.DefinePlugin(envKeys),
+    new Dotenv({
+      path: './.env'
+    }),
 
     new DefinePlugin({
       API_KEY: JSON.stringify(process.env.API_KEY),
