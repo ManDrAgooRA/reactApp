@@ -10,13 +10,9 @@ import { Layout } from '@/sharedComponents/layout/Layout/Layout';
 import '@/styles/style.scss';
 
 export const App = () => {
-  console.log(`process.env.API_KEY: ${process.env.API_KEY}`);
-  console.log(`process.env.REACT_APP_HELLO :${process.env.REACT_APP_HELLO}`);
   return (
     <Provider store={store}>
       <Grommet theme={THEME}>
-        <code>Runtime env var example: {process.env.REACT_APP_HELLO}</code>
-        <span>API_KEY:{process.env.API_KEY}</span>
         <BrowserRouter>
           <PersistGate loading={null} persistor={persistor}>
             <Layout>
