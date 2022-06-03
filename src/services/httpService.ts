@@ -1,7 +1,7 @@
 import { ErrorHandler } from '@/sharedComponents/ErrorHandler/ErrorHandler';
 
 export const baseUrl = (path: string): string => {
-  return `http://localhost:3004/${path}`;
+  return `${process.env.API_KEY}/${path}`;
 };
 const parseResponse = async (response: any): Promise<Response> => {
   if (response.status > 299) {
