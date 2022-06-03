@@ -17,7 +17,7 @@ module.exports = merge(common, {
     }),
 
     new Dotenv({
-      path: path.resolve(__dirname, './.env'),
+      path: './.env',
     }),
   ],
 });
