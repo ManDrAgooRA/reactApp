@@ -1,7 +1,7 @@
 import { ErrorHandler } from '@/sharedComponents/ErrorHandler/ErrorHandler';
 
 export const baseUrl = (path: string): string => {
-  return `$https://reactapplicationwithjsonserver.herokuapp.com/${path}`;
+  return `https://reactapplicationwithjsonserver.herokuapp.com/${path}`;
 };
 const parseResponse = async (response: any): Promise<Response> => {
   if (response.status > 299) {
