@@ -1,3 +1,4 @@
+const { DefinePlugin } = require('webpack');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HTMLWebPackPlugin = require('html-webpack-plugin');
@@ -35,6 +36,11 @@ module.exports = {
     new CleanWebpackPlugin(),
     new Dotenv({
       path: './.env',
+    }),
+
+    new DefinePlugin({
+      API_KEY: JSON.stringify(process.env.API_KEY),
+      API_HOST: JSON.stringify(process.env.API_HOST),
     }),
   ],
   module: {
