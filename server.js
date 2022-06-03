@@ -1,5 +1,3 @@
-import { CLIENT_PATHS } from './testFile';
-
 const jsonServer = require('json-server');
 
 const app = jsonServer.create();
@@ -17,7 +15,6 @@ app.use('/db', middlewares, router);
 app.use(express.static(path.join(__dirname, 'build')));
 
 console.log(`process.env.API_KEY: ${process.env.API_KEY}`);
-console.log(`CLIENT_PATHS: ${CLIENT_PATHS.cardPage}`);
 
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
