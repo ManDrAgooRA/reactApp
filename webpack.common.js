@@ -7,7 +7,7 @@ const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   mode: 'development',
-  entry: ['@babel/polyfill', './src/index.tsx'],
+  entry: './src/index.tsx',
   performance: {
     hints: false,
     maxEntrypointSize: 512000,
@@ -19,7 +19,7 @@ module.exports = {
     publicPath: '/',
   },
   devServer: {
-    port: 3000,
+    port: 3020,
     historyApiFallback: true,
   },
   resolve: {
@@ -50,7 +50,7 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(ts|tsx|js)$/,
+        test: /\.ts|tsx|js/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
