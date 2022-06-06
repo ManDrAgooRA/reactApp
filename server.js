@@ -1,6 +1,6 @@
 // const jsonServer = require('json-server');
 const auth = require('json-server-auth');
-
+const path = require('path');
 // const server = jsonServer.create();
 // const router = jsonServer.router('./db.json');
 
@@ -43,6 +43,11 @@ const router = jsonServer.router('./db.json');
 const middlewares = jsonServer.defaults({
   static: './build',
 });
+
+server.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build/index.html'));
+});
+
 const PORT = process.env.PORT || 8000;
 server.use(middlewares);
 server.use(
