@@ -1,12 +1,20 @@
 const jsonServer = require('json-server');
 const auth = require('json-server-auth');
-const path = require('path');
 
 const server = jsonServer.create();
 const router = jsonServer.router('./db.json');
 
-const routes = jsonServer.defaults({
-  static: path.join(__dirname, 'build'),
+server.get('/echo', (req, res) => {
+  res.jsonp(req.query);
+});
+
+server.use(jsonServer.bodyParser);
+server.use((req, res, next) => {
+  if (req.method === 'POST') {
+    req.body.createdAt = Date.now();
+  }
+  // Continue to JSON Server router
+  next();
 });
 
 const middlewares = jsonServer.defaults({
@@ -24,11 +32,6 @@ server.use(
   })
 );
 
-server.get((req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
 server.use(auth);
 server.use(router);
 server.listen(port);
-server.use(routes);
