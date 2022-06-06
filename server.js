@@ -56,8 +56,6 @@ server.use(
   })
 );
 server.use(router);
-server.listen(PORT, () => {
-  console.log('Server is running');
-});
+server.listen(PORT);
 
 server.use(auth);
