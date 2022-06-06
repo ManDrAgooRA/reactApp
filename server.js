@@ -1,5 +1,5 @@
 // const jsonServer = require('json-server');
-// const auth = require('json-server-auth');
+const auth = require('json-server-auth');
 
 // const server = jsonServer.create();
 // const router = jsonServer.router('./db.json');
@@ -55,4 +55,4 @@ server.listen(PORT, () => {
   console.log('Server is running');
 });
 
-// server.use(auth);
+server.use(auth);
