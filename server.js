@@ -7,7 +7,7 @@ const router = jsonServer.router('./db.json');
 
 server.use(
   jsonServer.defaults({
-    static: path.join(__dirname, './build'),
+    static: path.join(__dirname, 'build'),
     logger: false,
   })
 );
